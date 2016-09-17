@@ -1,27 +1,15 @@
 ﻿var NODE_ENV = process.env.NODE_ENV || 'development';
-
 if(NODE_ENV == 'development')require('babel-register')({presets: [ 'es2015' ]});
 
-
-
 var testES;
-
-
 testES = require("./test_babel/").lol;
-
 console.log(testES);
 
 var express = require('express');
 var path = require('path');
 
-/*
-var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var config = require('./webpack.config');
-*/
-
 var routes = require('./routes/routes');
-//var bodyParser = require('body-parser');
+
 //var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
@@ -42,12 +30,6 @@ require('./webpack.config').dev(app, webpackDevMiddleware);
 	
 }
 
-//var compiler = webpack(config);
-//app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
-
-//app.use(cookieParser());
-//app.use(bodyParser.json()); // for parsing application/json
-//app.use(bodyParser.urlencoded({ extended: false })); // for parsing application/x-www-form-urlencoded
 
 app.use(session({
   secret: "secret",
@@ -67,6 +49,13 @@ routes(app);
 app.use(function(err, req, res, next){
 	
 	if(err)console.log(err);
+	
+	var status = 404;
+	if(err.status)status = err.status; 
+	var mess = "not found";
+	if(err.message)mess= err.message;
+	
+	res.status(status).send({ error: mess });
 		
 });
 

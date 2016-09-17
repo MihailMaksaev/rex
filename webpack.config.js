@@ -1,9 +1,9 @@
-var path = require("path");
+п»їvar path = require("path");
 var webpack = require("webpack");
 
 
 var config = {
-	// для оладки в броузере
+	// РґР»СЏ РѕР»Р°РґРєРё РІ Р±СЂРѕСѓР·РµСЂРµ
   devtool: 'cheap-module-eval-source-map',
   entry: [
      'whatwg-fetch',
@@ -17,15 +17,15 @@ var config = {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-	// если ошибки то не создаем ничего
+	// РµСЃР»Рё РѕС€РёР±РєРё С‚Рѕ РЅРµ СЃРѕР·РґР°РµРј РЅРёС‡РµРіРѕ
     new webpack.NoErrorsPlugin()
   ],
-  // конфиг - где искать модули и с каим расширением
+  // РєРѕРЅС„РёРі - РіРґРµ РёСЃРєР°С‚СЊ РјРѕРґСѓР»Рё Рё СЃ РєР°РёРј СЂР°СЃС€РёСЂРµРЅРёРµРј
   resolve: {
   modulesDirectories: ['node_modules'],
   extensions: ['', '.js', '.jsx']
         },
-   // где искать лоадеры
+   // РіРґРµ РёСЃРєР°С‚СЊ Р»РѕР°РґРµСЂС‹
   resolveLoader: {
             modulesDirectories: ['node_modules'],
             moduleTemplates: ['*-loader', '*'],
@@ -46,7 +46,7 @@ var config = {
 
             loaders: [{
                 loaders: ['babel-loader?presets[]=es2015&presets[]=react&presets[]=stage-0'],
-				//куда добавить лодер(во все файлы в папке src)
+				//РєСѓРґР° РґРѕР±Р°РІРёС‚СЊ Р»РѕРґРµСЂ(РІРѕ РІСЃРµ С„Р°Р№Р»С‹ РІ РїР°РїРєРµ src)
                 include: [
                     path.resolve(__dirname, "src_front"),
                 ],

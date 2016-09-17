@@ -40,14 +40,13 @@ function saveObject(objToSave, res){
 	objToSave = {};
 
     obj.save(function (err, obj) {
+		
           if (err) {
-			  console.log(error);
-			  next(new Error('Not today. Sorry.'));
+			  //console.log(err);
+			  next(err);
 			  //return err;
 		  } 
-		  
-          
-		  
+		  		  
 		  if(linkOnFile){
 			  
 			  var mime = linkOnFile.split(".").pop();
@@ -56,17 +55,13 @@ function saveObject(objToSave, res){
 						if(err)console.log(err);
 						console.log("147RENAME file");
 						
-			        });
-			  
-			  
+			        });			  			  
 		  }
 		  
 		  console.log("153save in db");
           console.log(obj);
 		  
-		  next();
-		  
-
+		  next();		  
     });	
 }
 

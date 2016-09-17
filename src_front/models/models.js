@@ -42,7 +42,7 @@ var models ={
 					}}, 
 				   {name: FORM_FILDS.categoryId, type: "select",
 				   validType: {
-									type: Number,
+									type: String,
 									required: true
 					}}],
 		otherFilds: [{name: "created", type: "number", 

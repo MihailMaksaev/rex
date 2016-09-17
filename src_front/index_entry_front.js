@@ -18,7 +18,6 @@ import {loadAll} from "./actions/LoadActions"
 var store = configureStore({});
 
 store.dispatch(loadAll(LOAD_URL.load_category_items[0], LOAD_URL.load_category_items[1]));
-
 store.dispatch(loadAll(LOAD_URL.load_items[0], LOAD_URL.load_items[1]));
 
 //['addSoundFile', "addItem", "addCategory", "login", "registration"]
@@ -40,6 +39,4 @@ render((
 
 
 
-console.log("hello from webpack");
-
-//<Route path="/addCategory" component={AddCategory}></Route>	
+//console.log("hello from webpack");

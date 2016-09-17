@@ -35,7 +35,7 @@ export default React.createClass({
 	const nameFilds = this.props.params["nameToAdd"]; // параметр списка полей, также передается на сервер
 	//console.log(nameFilds);
 	const{POST_ACTION_CONST,  submitForm, resetMess, ...rest} = this.props;
-	//console.dir(POST_ACTION_CONST);   
+	//console.dir(rest.forSelect);   
 
 		return(<div> 
 	             <h3>{POST_ACTION_CONST[0]}9</h3>
@@ -48,7 +48,7 @@ export default React.createClass({
 							 
 							 return(<div key={i}><select  type={item.type} name={item.name} ref={item.name}>
 							 
-							 {rest.forSelect.map((item, i)=><option key={i} value={item.id}>{item.title}</option>)}
+							 {rest.forSelect.map((item, i)=><option key={i} value={item._id}>{item.title}</option>)}
 							       
 			                 </select></div>);							 
 						 }

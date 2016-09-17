@@ -26,19 +26,21 @@ export function sendItemOnServerAction(obj){
 			   //console.log(document.cookie);
                //console.log(response.headers.get('Content-Type')); // application/json; charset=utf-8
                //console.log(response.status); // 200
-			   
-			   	 dispatch({
-					type: LOAD_RESP_STATE.WAIT_RESP,
-					payload: MESSEGE_CONST.SERVER_SUCCESS 
-                 })
 
                 return response.json();
             }).then(function(obj) {
-				
-             console.log(obj); 
+			
+             if(!obj.error)	{		
+            // console.log(obj); 
+			 
+			  dispatch({
+					type: LOAD_RESP_STATE.WAIT_RESP,
+					payload: MESSEGE_CONST.SERVER_SUCCESS 
+                 })
+			 } else throw Error("не удалось схранить обьект");
 			 
            }).catch(function(err){
-			   console.log("err  "+err.status);
+			   console.log("err  "+err.message);
 			   
 			  dispatch({
                 type: LOAD_RESP_STATE.WAIT_RESP,

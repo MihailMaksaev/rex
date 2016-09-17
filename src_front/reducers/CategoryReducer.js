@@ -10,7 +10,7 @@ const initialState  = [];
 					 
 export default function CategoryReducer(state=initialState, action){
 	
-	switch (action.payload){
+	switch (action.type){
 		case ADD_CATEGORY:
 		return[
 		...action.payload,
@@ -18,6 +18,7 @@ export default function CategoryReducer(state=initialState, action){
 		]
 		
 		case LOAD_CATEGORY:
+		console.log("load category");
 		return action.payload;
 
 		default: return state;		
