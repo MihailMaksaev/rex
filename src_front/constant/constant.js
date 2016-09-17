@@ -1,5 +1,5 @@
 
-//var POST_ACTIONS = ['addSoundFile', "addItem", "addCategory", "login", "registration"];
+
 
 var POST_ACTIONS = { addSoundFile: ['addSoundFile', 'sound', 'create' ],
                      addItem: ['addItem', 'item', 'create'],
@@ -7,7 +7,7 @@ var POST_ACTIONS = { addSoundFile: ['addSoundFile', 'sound', 'create' ],
 					 login: ['login', 'user', 'authorization' ],
 					 registration: ['registration', 'user', 'create']};
 
-//var FORM_FILDS = ["title", "desc", "sound", "category", "username", "password"];
+
 var FORM_FILDS = {title: "title",
                    desc: "desc", 
 				   sound: "sound", 

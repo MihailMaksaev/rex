@@ -3,8 +3,9 @@
 import {LOAD_RESP_STATE} from "../constant/constant";
 
 const initialState = {
+	// для сообщений при отправке на сервер 
 	wait_resp: false, // send
-	
+	// для сообщений при загрузке с сервера
 	wait_load_res: false
 	
 }

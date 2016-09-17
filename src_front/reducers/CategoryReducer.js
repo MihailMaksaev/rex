@@ -18,7 +18,7 @@ export default function CategoryReducer(state=initialState, action){
 		]
 		
 		case LOAD_CATEGORY:
-		console.log("load category");
+		//console.log(action.payload);
 		return action.payload;
 
 		default: return state;		

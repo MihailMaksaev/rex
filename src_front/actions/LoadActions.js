@@ -28,8 +28,8 @@ export  function loadAll(url, param){
 			 
         }).then(function(json) {
 			
-               console.log('parsed json');
-			   console.dir(json[param]);
+              // console.log('parsed json');
+			  // console.dir(json[param]);
 			   
 		  dispatch({
                type: param,

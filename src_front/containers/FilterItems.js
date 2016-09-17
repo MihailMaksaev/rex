@@ -8,6 +8,7 @@ import ListItem from "../components/ListItems"
 	 return {
 		 
 		 items: state.ItemReducer
+
 	 }
 	 
  }
@@ -16,11 +17,7 @@ import ListItem from "../components/ListItems"
 
 
 
-const VisibleItems = connect(
-
-    mapStateToProps
-
-)(ListItem);
+const VisibleItems = connect(mapStateToProps)(ListItem);
 
 
 export default VisibleItems;
