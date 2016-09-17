@@ -1,0 +1,11 @@
+﻿<% layout('layout/bolierplate') -%>
+
+<p> Мой музыкальный сайт <p/>
+
+<div id="root"></div>
+
+<% if (NODE_ENV=="production") { %>
+<script src="/bundle.js"></script>
+<% }else{ %>
+<script src="/static/bundle.js"></script>
+<% }%>
