@@ -20,7 +20,7 @@ import './styles/app.css'
 					
 					
 					<li className="navMainLi"><NavLink to="/categories" >Категории</NavLink></li>
-					
+
 				</ul>
 				{this.props.children}				
 	       </div> );

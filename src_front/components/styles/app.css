@@ -1,25 +1,52 @@
- @lost gutter 5px; /* @lost gutter 10px; gutter accepts any unit value. 30px (default).  The margin on the right side of the element used to create a gutter. Typically this is left alone and settings.gutter will be used, but you can override it here if you want certain elements to have a particularly large or small gutter (pass 0 for no gutter at all).*/
+ @custom-media --small-viewport (max-width: 400px);
+ @custom-media --large-viewport (min-width: 401px);
+  @lost gutter 20px;
+  
+@media --small-viewport {
+     /* @lost gutter 10px; gutter accepts any unit value. 30px (default).  The margin on the right side of the element used to create a gutter. Typically this is left alone and settings.gutter will be used, but you can override it here if you want certain elements to have a particularly large or small gutter (pass 0 for no gutter at all).*/
+}
 
-$orang: #FF4500;
+ 
+$backColor: #FF4500;
 
-$yelowGren: #9ACD32;
+$itemColor: #9ACD32;
+
+$minItemInMenu: 4;
+
+$maxItemInMenu: 8;
+
+$m: 15px;
+
+
+
+@media (--large-viewport) {
+  /* styles for small viewport */
+
 	
 .App>ul {
 	min-width: 500px;
     margin-left: 0; /* Отступ слева в браузере IE и Opera */
     padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
-	background-color: $orang;
-	lost-utility: clearfix;
-
-    &>li{
+	background-color: $backColor;
+	/*lost-utility: clearfix;*/
+    lost-masonry-wrap: no-flex;
+	
+  @for $i from $minItemInMenu to $maxItemInMenu {
+    &> li:nth-last-child($i):first-child,
+    &> li:nth-last-child($i):first-child ~ *{	
+    font-size: 18px;	
     list-style-type: none; /* Убираем маркеры */
-	background-color: $yelowGren;
+	background-color: $itemColor;
 	
-    lost-column: 1/6 6 5px; /* 3-й gutter */
+
+   /* lost-column: 1/$i $i ; /* 3-й gutter */
 	/*lost-waffle: 1/2;*/	
-   }	
+	lost-masonry-column: 1/6;
+   }
+ }
 } 
-	
+
+}	
  /*  
 .navMainUl li.L2x{ lost-column: 1/3 0 5px }   
 

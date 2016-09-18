@@ -58,7 +58,7 @@ var config = {
         }]
     },
     postcss: function() {
-        return [require('lost'), precss, autoprefixer];
+        return [ require('lost') , precss, autoprefixer];
     }
 }
 
