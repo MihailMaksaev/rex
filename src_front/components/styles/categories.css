@@ -1,0 +1,24 @@
+ @lost gutter 10px;
+ 
+$orang: #FF4500;
+
+$yelowGren: #9ACD32;
+
+.Categories {
+	lost-utility: clearfix;	
+	
+	&>ul{
+	margin-left: 0; /* Отступ слева в браузере IE и Opera */
+    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+	background-color: #FF4500;
+	lost-column: 1/3 ;	
+    }
+	
+	&>div{
+	lost-column: 2/3 ;	
+    }
+}
+
+/*.Categories */
+
+

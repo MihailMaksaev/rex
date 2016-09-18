@@ -15,7 +15,7 @@ import Item from "./Item"
 				{
 					items.map((item, i)=>{
 						if(category != "Все категории" && item.category != category)return
-						return <Item  title={item.title} desc={item.desc} date={item.date}  key={i} />
+						return <Item  title={item.title} desc={item.desc} created={item.created}  key={i} />
 				    })
 				}
 	      </div>);

@@ -1,6 +1,7 @@
 ﻿import React from "react"
 import NavLink from "./NavLink"
 import {connect} from "react-redux"
+import './styles/categories.css'
 
 
  var Categories = React.createClass({
@@ -8,7 +9,7 @@ import {connect} from "react-redux"
 	  
 	const{categories} = this.props;
 	//console.log(categories)
-    return(<div>
+    return(<div className="Categories">
 		<ul role="nav">
 			<li><NavLink to="/categories" onlyActiveOnIndex={true}>Все записи</NavLink></li>
 			{

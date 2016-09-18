@@ -10,6 +10,7 @@ import Categories from './components/Categories'
 import FilterItems from './containers/FilterItems'
 import {POST_ACTIONS, LOAD_URL} from './constant/constant'
 import buildForm from './containers/buildForm'
+//import './styles/app.css'
 //import AddCategory from './containers/AddCategory'
 
 import {loadAll} from "./actions/LoadActions"
