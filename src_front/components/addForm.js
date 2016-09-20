@@ -8,48 +8,74 @@ import {models} from "../models/models"
 import TextField from "./formFields/text"
 import SelectField from "./formFields/select"
 
+import {FORM_FILDS} from "../constant/constant"
+
+import { browserHistory } from 'react-router'
+
+
+
 const FORM_ERROR = "form_error";
+
 
 export default React.createClass({
 	
-	
-componentDidMount: function() { 
+ formValid: false,
+		
+ componentDidMount: function() { //ставим фокус в input
     
-var formValid= $('form');
+	//console.log(s);
+//console.log(this.props.POST_ACTION_CONST);
 
- formValid.form({
+var filds ={};
+
+models[this.props.POST_ACTION_CONST[1]].formFilds.forEach((fild, i)=>{
+	//console.dir(fild);
+	//console.dir(FORM_FILDS[fild.name]);
+	filds[fild.name] ={
+		identifier : fild.name,
+		rules: FORM_FILDS[fild.name][1]
+	}
+})
+
+ this.formValid= $('form');
+ 
+//console.dir(this.formValid);
+
+ this.formValid.form({
     on: 'blur',
-    fields: {
-      username: {
-      identifier  : 'username',
-        rules: [
-          {
-            type   : 'empty',
-            prompt : 'Please enter a value'
-          }
-        ]
-      }
-    }
+    fields: filds	
   });	
 
+      //console.dir(formValid);
+	 // console.dir(formValid.form('is valid'));
 	
   },
 	
   addItem( filds, submitForm,  POST_ACTION_CONST,resetMess, e){
 		
      e.preventDefault();
-	 //console.log(this.refs);
+	 
+	 var semanticValidation = this.formValid.form('is valid');
 	 
 	 var sendObj = fildsValidation(filds, this.refs, POST_ACTION_CONST);
 	 
-	 if(!sendObj){
+	 if(!sendObj || !semanticValidation ){
+		 
+		// console.log("отправка формы"+this.formValid.form('is valid'));
         //если ошибка добавляем сообщение с ошибкой 		 
 		resetMess(FORM_ERROR); 
 		return;
-	 }	
-		//console.dir(sendObj);
+	 }
+
+    
+	 
+		console.dir(sendObj);
 	
-        submitForm(sendObj);		
+        submitForm(sendObj);	
+
+         //this.forceUpdate();	
+
+       browserHistory.push('/');	 
   },
   
 	

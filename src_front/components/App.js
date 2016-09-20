@@ -1,6 +1,8 @@
 ﻿import React from "react"
 import NavLink from "./NavLink"
 import {POST_ACTIONS} from "../constant/constant"
+//для включения семантик юи
+var f = s;
 //import './styles/app.css'
 //['addSoundFile', "addItem", "addCategory", "login", "registration"]
 
@@ -8,6 +10,8 @@ import {POST_ACTIONS} from "../constant/constant"
 
 
   componentDidMount: function() {
+	  
+	  
 	  
   $('.ui.menu .ui.dropdown').dropdown({
         on: 'hover'

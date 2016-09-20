@@ -4,13 +4,13 @@ import {FORM_FILDS} from "../constant/constant"
 var models ={
 	
 	user: {
-		formFilds: [{name: FORM_FILDS.username, type: "text", 
+		formFilds: [{name: FORM_FILDS.username[0], type: "text", 
 		             validType: {
 									type: String,
 									required: true,
 									unique: true
 					}},
- 		            {name: FORM_FILDS.password, type: "password",
+ 		            {name: FORM_FILDS.password[0], type: "password",
 					 validType: {
 									type: String,
 									required: true,
@@ -30,17 +30,17 @@ var models ={
                     }}],
 	},
 	item: {
-		formFilds: [{name: FORM_FILDS.title, type: "text",
+		formFilds: [{name: FORM_FILDS.title[0], type: "text",
 		             validType: {
 									type: String,
 									required: true
 					}}, 
-		           {name: FORM_FILDS.desc, type: "textarea",
+		           {name: FORM_FILDS.desc[0], type: "textarea",
 				    validType: {
 									type: String,
 									required: true
 					}}, 
-				   {name: FORM_FILDS.categoryId, type: "select",
+				   {name: FORM_FILDS.category[0], type: "select",
 				   validType: {
 									type: String,
 									required: true
@@ -52,7 +52,7 @@ var models ={
                     }}],
 	},
     category: {
-		formFilds: [{name: FORM_FILDS.title, type: "text",
+		formFilds: [{name: FORM_FILDS.title[0], type: "text",
 		            validType: {
 									type: String,
 									required: true
@@ -64,7 +64,7 @@ var models ={
                     }}],
 	},
 	sound: {
-		formFilds: [{name: FORM_FILDS.sound, type: "file", accept: "mp3",
+		formFilds: [{name: FORM_FILDS.sound[0], type: "file", accept: "mp3",
 		            validType: {
 		                            type: Number
                     }}],
