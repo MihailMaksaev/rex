@@ -15,19 +15,17 @@ module.exports = function (app){
 		res.status(200).jsonp({ [""+req.params.param]: res.models });
 	});	
 	
-    app.post("/create", parseFileForm, createObject,  function(req, res, next){	
-    //res.header('Access-Control-Allow-Credentials', 'true');	
-	
-		var sess = req.session;
-	
-		if(sess.views){
-			sess.views++;
-		}
+    app.post("/create", parseFileForm, createObject,  function(req, res, next){		
      
       res.status(200).jsonp({ mess: 'данные сохранены' });	 
     });	
 	
-if(NODE_ENV != "production")	{
+   app.get("/test",  function(req, res){
+		
+		res.render('index_test', {title: "hello world", NODE_ENV: NODE_ENV});     
+	});
+	
+
 	app.get("/*",  function(req, res){
 		
 		var sess = req.session;
@@ -36,12 +34,10 @@ if(NODE_ENV != "production")	{
 		}else{
 			sess.views =1;
 		}
-	 //console.log(req.cookies);	
-
 		res.render('index', {title: "hello world", NODE_ENV: NODE_ENV});     
 	});
-}else{
-	
+}
+/*	
 	app.get("/*",  function(req, res){
 		
 		var sess = req.session;
@@ -57,24 +53,8 @@ if(NODE_ENV != "production")	{
 	});	
 }
 
-}	
- /*
-	   app.get("/test",  function(req, res){
-		
-		var sess = req.session;
-		if(sess.views){
-			sess.views++;
-		}else{
-			sess.views =1;
-		}
-	 ///console.log(sess);
-	 //console.log(req.cookies);	
-   res.sendFile(path.resolve(__dirname, '../dist/index.html'));
-		
-	 
-	// console.log(req.body );       
-	});
-   */ 
+*/	
+
 
 	
 

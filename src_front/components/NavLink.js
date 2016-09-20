@@ -5,8 +5,7 @@ import { Link } from 'react-router'
 
 export default  React.createClass({
   render() {
-
-    return <Link  {...this.props} onClick={function(){}} className="link" activeClassName="activeLink"/>
+		return <Link  {...this.props} onClick={function(){}} className="item" activeClassName="active item"></Link>    
   }
 });
 

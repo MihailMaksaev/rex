@@ -24,11 +24,12 @@ export function fildsValidation(filds, refs, POST_ACTION_CONST){
 	
 	}
 	   // sendObj.created = Date.now();
-
+         /*
 		for (var ii=0; ii<refsArr.length; ii++ ){
 
-			findDOMNode(refs[refsArr[ii]]).value = "";
+			findDOMNode(refs[refsArr[ii]].refs[ii]).value = "";
 		}
+		*/
 	    return sendObj;
 }
 
@@ -37,24 +38,30 @@ function validFild (fildName, formFildsConst, sendObj, refs){
 	//var sendObj = {};
 		//console.log('1'+fildName);
 
-			
-			var ref = findDOMNode(refs[fildName]);
-			//console.dir(ref);
+			//console.dir(refs);
+			var ref = findDOMNode(refs[fildName].refs[fildName]);
+			// console.dir(ref);
 			if(fildName == FORM_FILDS.categoryId){
              
 			 if(!ref.value.trim())return false;
-			 
+			  
 			 	sendObj[fildName] = ref.value;
-				//console.log(fildName);
+				
+				
+				//findDOMNode(refs[fildName].refs[fildName]).value = "";
+				console.log(ref.value);
 				
 				return fildName;
 
 			}
 			else if(fildName!=formFildsConst.sound){
 				
+				//console.dir(ref)
+				
 				if(!ref.value.trim() || ref.value.length<3)return false;
 				
 				sendObj[fildName] = ref.value;
+				ref.value ="";
 				
 				return fildName;
 												

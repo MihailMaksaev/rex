@@ -35,7 +35,7 @@ var models ={
 									type: String,
 									required: true
 					}}, 
-		           {name: FORM_FILDS.desc, type: "text",
+		           {name: FORM_FILDS.desc, type: "textarea",
 				    validType: {
 									type: String,
 									required: true
@@ -64,7 +64,7 @@ var models ={
                     }}],
 	},
 	sound: {
-		formFilds: [{name: FORM_FILDS.sound, type: "file", 
+		formFilds: [{name: FORM_FILDS.sound, type: "file", accept: "mp3",
 		            validType: {
 		                            type: Number
                     }}],

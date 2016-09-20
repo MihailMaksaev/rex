@@ -20,7 +20,16 @@ var config = {
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
         // если ошибки то не создаем ничего
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+		
+		 new webpack.ProvidePlugin({
+			   $: "jquery",
+			   jQuery: "jquery",
+			   s:   'semantic-ui/dist/semantic.min.js'
+               
+                //  jQuery: "jquery/jquery.min.js",
+                //   "window.jQuery": "jquery/jquery.min.js"
+         })
     ],
     // конфиг - где искать модули и с каим расширением
     resolve: {

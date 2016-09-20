@@ -1,6 +1,6 @@
  @custom-media --small-viewport (max-width: 400px);
  @custom-media --large-viewport (min-width: 401px);
-  @lost gutter 20px;
+ @lost gutter 20px;
   
 @media --small-viewport {
      /* @lost gutter 10px; gutter accepts any unit value. 30px (default).  The margin on the right side of the element used to create a gutter. Typically this is left alone and settings.gutter will be used, but you can override it here if you want certain elements to have a particularly large or small gutter (pass 0 for no gutter at all).*/

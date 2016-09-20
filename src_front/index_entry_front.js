@@ -30,6 +30,7 @@ render((
     <Route path="/" component={App}>
 	
 	    <IndexRedirect to="/categories" />
+		<Route path={"/sendPost"} component={ buildForm(POST_ACTIONS.login)}></Route>
 		
         <Route path={"/sendPost/"+POST_ACTIONS.addSoundFile[0]} component={ buildForm(POST_ACTIONS.addSoundFile)}></Route>	
         <Route path={"/sendPost/"+POST_ACTIONS.addItem[0]} component={ buildForm(POST_ACTIONS.addItem)}></Route>

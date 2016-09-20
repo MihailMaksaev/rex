@@ -1,10 +1,6 @@
 ﻿var NODE_ENV = process.env.NODE_ENV || 'development';
 if(NODE_ENV == 'development')require('babel-register')({presets: [ 'es2015' ]});
 
-var testES;
-testES = require("./test_babel/").lol;
-console.log(testES);
-
 var express = require('express');
 var path = require('path');
 
@@ -16,7 +12,7 @@ var session = require('express-session');
 
 
 var app = express();
-var PORT = 3000;
+var PORT = 3001;
 
 
 app.engine('ejs', require("ejs-locals"));

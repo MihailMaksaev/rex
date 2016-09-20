@@ -9,6 +9,7 @@ ehthumbs.db
 Thumbs.db
 
 node_modules
+semantic-ui
 dist/boundle.js
 npm-debug.log
 dist/uploads

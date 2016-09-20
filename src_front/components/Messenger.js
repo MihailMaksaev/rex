@@ -20,7 +20,6 @@ var Messenger =  React.createClass({
 		
 		//console.log("render messenger");
 		return<div>
-          		  <h3> Messege </h3>
 		          {mess}
 		     </div>
 		

@@ -1,7 +1,7 @@
 ﻿import React from "react"
 import NavLink from "./NavLink"
 import {connect} from "react-redux"
-import './styles/categories.css'
+//import './styles/categories.css'
 
 
  var Categories = React.createClass({
